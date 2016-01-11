@@ -10,3 +10,10 @@
 
 ### 제주 버스 정류장의 위치 정보를 중심으로 버스 시간 및 주변 볼거리, 먹거리, 광고 정보를 제공해 주는 서비스
 
+***
+
+## 프로토타입(Oven)
+
+ - https://ovenapp.io/project/NI4eGHkGHSvP1BXC6WwSVvnjNPwDPaaF#E1nh1
+
+***
