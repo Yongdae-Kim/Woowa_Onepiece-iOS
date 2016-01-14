@@ -11,9 +11,7 @@ import UIKit
 class AdModel: NSObject {
     var id:Int?
     var title:String?
-    var addr:String?
-    var lng:String?
-    var lat:String?
+    var locModel:LocModel?
     var cdId:Int?
     var comment1:String?
     var comment2:String?

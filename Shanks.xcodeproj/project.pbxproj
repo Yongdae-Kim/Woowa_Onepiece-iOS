@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		226D83AA1C464B6D00CF0DB2 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D83A91C464B6D00CF0DB2 /* AdModel.swift */; };
 		226D83AC1C464E4300CF0DB2 /* ImgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D83AB1C464E4300CF0DB2 /* ImgModel.swift */; };
+		226D83AE1C4666C200CF0DB2 /* BusStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D83AD1C4666C200CF0DB2 /* BusStopModel.swift */; };
+		226D83B01C47148200CF0DB2 /* LocModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226D83AF1C47148200CF0DB2 /* LocModel.swift */; };
 		22B889F81C43885C0011E302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B889F71C43885C0011E302 /* AppDelegate.swift */; };
 		22B889FA1C43885C0011E302 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B889F91C43885C0011E302 /* MainController.swift */; };
 		22B889FD1C43885C0011E302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B889FB1C43885C0011E302 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		0AA9EEA3EB8CEDA952E6988D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		226D83A91C464B6D00CF0DB2 /* AdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		226D83AB1C464E4300CF0DB2 /* ImgModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgModel.swift; sourceTree = "<group>"; };
+		226D83AD1C4666C200CF0DB2 /* BusStopModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStopModel.swift; sourceTree = "<group>"; };
+		226D83AF1C47148200CF0DB2 /* LocModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocModel.swift; sourceTree = "<group>"; };
 		22B889F41C43885C0011E302 /* Shanks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shanks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B889F71C43885C0011E302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B889F91C43885C0011E302 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				22F480841C4530A5000E603C /* BusStopViewController.swift */,
 				226D83A91C464B6D00CF0DB2 /* AdModel.swift */,
 				226D83AB1C464E4300CF0DB2 /* ImgModel.swift */,
+				226D83AD1C4666C200CF0DB2 /* BusStopModel.swift */,
+				226D83AF1C47148200CF0DB2 /* LocModel.swift */,
 			);
 			path = Shanks;
 			sourceTree = "<group>";
@@ -355,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226D83B01C47148200CF0DB2 /* LocModel.swift in Sources */,
 				22F480851C4530A5000E603C /* BusStopViewController.swift in Sources */,
+				226D83AE1C4666C200CF0DB2 /* BusStopModel.swift in Sources */,
 				226D83AC1C464E4300CF0DB2 /* ImgModel.swift in Sources */,
 				22B889FA1C43885C0011E302 /* MainController.swift in Sources */,
 				22F480831C453052000E603C /* AdViewController.swift in Sources */,

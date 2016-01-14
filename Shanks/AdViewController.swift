@@ -20,42 +20,49 @@ class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var tableView: UITableView!
     
+    let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
     var adList = [AdModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Alamofire.request(.GET, "http://luffy.dev/api/ads.json").responseJSON { response in
-
-            // print(response.request)  // original URL request
-            // print(response.response) // URL response
-            // print(response.result)   // result of response serialization
+        showAdTableView()
+    }
+    
+    func showAdTableView(){
+        Alamofire.request(.GET, URL_FOR_GET_AD).responseJSON { response in
             
             let JSON = response.result.value
             if let ads = JSON as? NSArray {
                 for ad in ads {
                     if let dict = ad as? NSDictionary {
-                        print(dict["ad_imgs"] as? NSObject)
-                        
-                        let adModel = AdModel()
-                        
-                        adModel.id = dict["id"] as? Int
-                        adModel.title = dict["ad_title"] as? String
-                        adModel.addr = dict["ad_addr"] as? String
-                        adModel.lng = dict["ad_lng"] as? String
-                        adModel.lat = dict["ad_lat"] as? String
-                        adModel.comment1 = dict["ad_ct1"] as? String
-                        adModel.comment2 = dict["ad_ct2"] as? String
-                        adModel.startDt = dict["ad_start_dt"] as? String
-                        adModel.endDt = dict["ad_end_dt"] as? String
-                        
-                        self.adList.append(adModel)
+                        self.genreateAdList(dict)
                     }
                 }
                 self.tableView.reloadData()
             }
         }
     }
+    
+    func genreateAdList(dict : NSDictionary){
+        let adModel = AdModel()
+        
+        adModel.id = dict["id"] as? Int
+        adModel.title = dict["title"] as? String
+        adModel.comment1 = dict["content1"] as? String
+        adModel.comment2 = dict["content2"] as? String
+        adModel.startDt = dict["start_dt"] as? String
+        adModel.endDt = dict["end_dt"] as? String
+        
+        if let loc = dict["loc"] {
+            let locModel = LocModel()
+            locModel.addr = loc["addr"] as? String
+            locModel.lat = loc["lat"] as? String
+            locModel.lng = loc["lng"] as? String
+            adModel.locModel = locModel
+        }
+        self.adList.append(adModel)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -78,8 +85,8 @@ class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // let row = indexPath.row
-        // let order = adList[row].title
-    }
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        // let row = indexPath.row
+//        // let order = adList[row].title
+//    }
 }
