@@ -9,24 +9,38 @@
 import UIKit
 import Alamofire
 
-class AdTableViewCell: UITableViewCell {
+class AdTableCell: UITableViewCell {
     
     @IBOutlet weak var adTitle: UILabel!
     @IBOutlet weak var adComment: UILabel!
     @IBOutlet weak var adImg: UIImageView!
 }
 
-class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
+class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
     let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
+    let myColor : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+    
+    @IBOutlet weak var etcBtn: UIButton!
+    @IBOutlet weak var storeBtn: UIButton!
+    @IBOutlet weak var cultureBtn: UIButton!
+    @IBOutlet weak var foodBtn: UIButton!
+    
+    @IBOutlet weak var adTableView: UITableView!
+    
     var adList = [AdModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "광고 목록 보기"
         showAdTableView()
+        
+        btnInit(foodBtn)
+        btnInit(cultureBtn)
+        btnInit(storeBtn)
+        btnInit(etcBtn)
     }
+    
     
     func showAdTableView(){
         Alamofire.request(.GET, URL_FOR_GET_AD).responseJSON { response in
@@ -38,7 +52,7 @@ class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
                         self.genreateAdList(dict)
                     }
                 }
-                self.tableView.reloadData()
+                self.adTableView.reloadData()
             }
         }
     }
@@ -62,19 +76,14 @@ class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
         self.adList.append(adModel)
     }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return adList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("AdCell", forIndexPath: indexPath) as! AdTableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("AdCell", forIndexPath: indexPath) as! AdTableCell
+        
         let row = indexPath.row
         cell.adTitle.text = adList[row].title
         cell.adComment.text = adList[row].comment1
@@ -85,8 +94,21 @@ class AdViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        // let row = indexPath.row
-//        // let order = adList[row].title
-//    }
+    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //        let row = indexPath.row
+    //        let order = adList[row].title
+    //    }
+    
+    func btnInit(btn : UIButton){
+        btn.backgroundColor = UIColor.clearColor()
+        btn.layer.cornerRadius = 8.0
+        btn.layer.masksToBounds = true
+        btn.layer.borderWidth = 2.0
+        btn.layer.borderColor = myColor.CGColor
+        btn.setTitleColor(myColor, forState: UIControlState.Normal)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

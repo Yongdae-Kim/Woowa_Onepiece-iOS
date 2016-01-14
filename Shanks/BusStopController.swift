@@ -10,19 +10,32 @@ import MapKit
 import UIKit
 import Alamofire
 
-class BusStopViewController: UIViewController {
+class BusStopController: UIViewController {
     
+   
+    @IBOutlet weak var searchTf: UITextField!
+    @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
     
     let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
     var busStopList = [BusStopModel]()
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "정류장 지도 보기"
+        
+        let myColor : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+        
+        searchTf.layer.cornerRadius = 8.0
+        searchTf.layer.masksToBounds = true
+        searchTf.layer.borderWidth = 2.0
+        searchTf.layer.borderColor = myColor.CGColor
+        
+        searchBtn.setTitleColor(myColor, forState: UIControlState.Normal)
+        
         showBusStopMarkerOnMap();
     }
-    
-   
     
     func showBusStopMarkerOnMap(){
         Alamofire.request(.GET, URL_FOR_GET_BUS_STOP).responseJSON { response in
@@ -76,6 +89,10 @@ class BusStopViewController: UIViewController {
             map.addAnnotation(anotation)
         }
     }
+    
+    @IBAction func searchBtnPressed(sender: AnyObject) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
