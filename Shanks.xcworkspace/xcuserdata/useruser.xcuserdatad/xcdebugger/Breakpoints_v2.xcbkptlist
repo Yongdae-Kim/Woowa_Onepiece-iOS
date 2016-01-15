@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/AdController.swift"
-            timestampString = "474526397.011842"
+            timestampString = "474533555.529804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "AdController"
             landmarkType = "3">
             <Locations>
@@ -119,11 +119,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/AdController.swift"
-            timestampString = "474526397.011842"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -134,29 +134,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shanks/AdController.swift"
-            timestampString = "474526397.011842"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "showAdTableView()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Shanks/BusStopController.swift"
-            timestampString = "474524803.716936"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "genreateBusStopMarker()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "genreateBusStopMarker(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -199,11 +183,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/BusStopController.swift"
-            timestampString = "474524803.716936"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "searchBtnPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -215,11 +199,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/BusStopController.swift"
-            timestampString = "474524803.716936"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "searchBtnPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -231,12 +215,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/BusStopController.swift"
-            timestampString = "474524803.716936"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "genreateBusStopMarker()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "genreateBusStopMarker(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -246,14 +230,107 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474524803.716936"
+            filePath = "Shanks/AdController.swift"
+            timestampString = "474538433.799069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getBusStopList()"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanks/AdController.swift"
+            timestampString = "474538433.799069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanks/AdController.swift"
+            timestampString = "474538433.799069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shanks/AdDetailController.swift"
+            timestampString = "474532509.328973"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Shanks.AdDetailController.__deallocating_deinit"
+                  moduleName = "Shanks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/useruser/Desktop/workspace/Woowa_Onepiece-iOS/Shanks/AdDetailController.swift"
+                  timestampString = "474532509.334852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Shanks.AdDetailController.init (Shanks.AdDetailController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Shanks.AdDetailController"
+                  moduleName = "Shanks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/useruser/Desktop/workspace/Woowa_Onepiece-iOS/Shanks/AdDetailController.swift"
+                  timestampString = "474532509.335185"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Shanks.AdDetailController.init (Shanks.AdDetailController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Shanks.AdDetailController&gt;"
+                  moduleName = "Shanks"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/useruser/Desktop/workspace/Woowa_Onepiece-iOS/Shanks/AdDetailController.swift"
+                  timestampString = "474532509.335403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -263,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shanks/BusStopController.swift"
-            timestampString = "474525911.518109"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -278,77 +355,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474525920.492386"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "getBusStopList()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474525923.936283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getBusStopList()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Shanks.BusStopService.getBusStopList (Shanks.BusStopService)() -&gt; Swift.Array&lt;Shanks.BusStopModel&gt;"
-                  moduleName = "Shanks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/useruser/Desktop/workspace/Shanks/Shanks/BusStopService.swift"
-                  timestampString = "474525923.939749"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "408">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Shanks.BusStopService.(getBusStopList (Shanks.BusStopService) -&gt; () -&gt; Swift.Array&lt;Shanks.BusStopModel&gt;).(closure #1)"
-                  moduleName = "Shanks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/useruser/Desktop/workspace/Shanks/Shanks/BusStopService.swift"
-                  timestampString = "474525923.939988"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1083">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474525925.854368"
+            filePath = "Shanks/BusStopController.swift"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "getBusStopList()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -358,44 +371,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474526003.023834"
+            filePath = "Shanks/BusStopController.swift"
+            timestampString = "474537988.721394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getBusStopList()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Shanks.BusStopService.(getBusStopList (Shanks.BusStopService) -&gt; () -&gt; Swift.Array&lt;Shanks.BusStopModel&gt;).(closure #1)"
+                  symbolName = "Shanks.BusStopController.viewDidLoad (Shanks.BusStopController)() -&gt; ()"
                   moduleName = "Shanks"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/useruser/Desktop/workspace/Shanks/Shanks/BusStopService.swift"
-                  timestampString = "474526003.026562"
+                  urlString = "file:///Users/useruser/Desktop/workspace/Woowa_Onepiece-iOS/Shanks/BusStopController.swift"
+                  timestampString = "474535899.524436"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "1041">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "1606">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Shanks.BusStopService.(getBusStopList (Shanks.BusStopService) -&gt; () -&gt; Swift.Array&lt;Shanks.BusStopModel&gt;).(closure #1)"
+                  symbolName = "Shanks.BusStopController.(viewDidLoad (Shanks.BusStopController) -&gt; () -&gt; ()).(closure #1)"
                   moduleName = "Shanks"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/useruser/Desktop/workspace/Shanks/Shanks/BusStopService.swift"
-                  timestampString = "474526003.026807"
+                  urlString = "file:///Users/useruser/Desktop/workspace/Woowa_Onepiece-iOS/Shanks/BusStopController.swift"
+                  timestampString = "474535899.524685"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "1053">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "71">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -406,13 +419,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Shanks/BusStopService.swift"
-            timestampString = "474526063.88184"
+            filePath = "Shanks/AdController.swift"
+            timestampString = "474538433.799069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "getBusStopList()"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "btnPressed(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

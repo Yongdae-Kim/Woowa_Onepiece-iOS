@@ -11,21 +11,33 @@ class BusStopService {
     
     let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
     
-    func getBusStopList() -> [BusStopModel] {
-        var busStopList = [BusStopModel]()
-        Alamofire.request(.GET, URL_FOR_GET_BUS_STOP).responseJSON { response in
+    class var sharedInstance: BusStopService {
+        struct Static {
+            static var onceToken: dispatch_once_t = 0
+            static var instance: BusStopService? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = BusStopService()
+        }
+        return Static.instance!
+    }
+    
+    func getBusStopList(completionHandler:[BusStopModel] -> ())  {
+        Alamofire.request(.GET, URL_FOR_GET_BUS_STOP).responseJSON {
+            response in
             let JSON = response.result.value
+            var busStopList = [BusStopModel]()
+            
             if let busStops = JSON as? NSArray {
                 for busStop in busStops {
                     if let dict = busStop as? NSDictionary {
                         let busStopModel = self.genreateBusStopModel(dict)
                         busStopList.append(busStopModel)
-                        print(busStopList)
                     }
                 }
+                completionHandler(busStopList)
             }
         }
-        return busStopList
     }
 
     private func genreateBusStopModel(dict : NSDictionary) -> BusStopModel{
