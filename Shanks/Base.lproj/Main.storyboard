@@ -65,6 +65,14 @@
                     <view key="view" contentMode="scaleToFill" id="MXu-QP-hfb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-zA-UnR">
+                                <rect key="frame" x="199" y="316" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -117,7 +125,7 @@
                                             <outlet property="adComment" destination="6dK-xm-OuU" id="mbS-2V-E8R"/>
                                             <outlet property="adImg" destination="69p-Hm-isA" id="X6v-yq-nU5"/>
                                             <outlet property="adTitle" destination="aZZ-Kz-GGe" id="B1p-w9-jbQ"/>
-                                            <segue destination="6f7-1D-Xgx" kind="show" identifier="AdDetailSegue" trigger="accessoryAction" id="Opb-V8-yPm"/>
+                                            <segue destination="6f7-1D-Xgx" kind="show" identifier="AdDetailSegue" trigger="accessoryAction" id="Oc6-RM-KoT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,7 +206,7 @@
         <scene sceneID="WRZ-vh-6h4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W8u-MK-YvY" userLabel="Ad Navi Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="광고" image="tab1.png" id="l9Y-hH-lJU" userLabel="item"/>
+                    <tabBarItem key="tabBarItem" title="광고" id="l9Y-hH-lJU" userLabel="item"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lx5-Q7-vCS">
@@ -218,7 +226,7 @@
         <scene sceneID="Rgy-qy-gbl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qik-qo-bn8" userLabel="BusStop Navi Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="버스정류장" image="tab2.png" id="tix-ZQ-6eC"/>
+                    <tabBarItem key="tabBarItem" title="버스정류장" id="tix-ZQ-6eC"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R9s-4m-gfM">
@@ -235,8 +243,4 @@
             <point key="canvasLocation" x="332" y="565"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="tab1.png" width="30" height="30"/>
-        <image name="tab2.png" width="30" height="30"/>
-    </resources>
 </document>

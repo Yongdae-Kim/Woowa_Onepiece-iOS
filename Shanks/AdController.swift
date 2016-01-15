@@ -103,13 +103,15 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.adTitle.text = adTableList[row].title
         cell.adComment.text = adTableList[row].comment1
         
-        let img = UIImage(named: "sample.jpg")
+        let img = UIImage(named: "/resources/sample.jpg")
         cell.adImg.image = img
         cell.adImg.contentMode = UIViewContentMode.ScaleAspectFit
+        
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("click")
         if (segue.identifier == "AdDetailSegue") {
             let adDetailController = segue.destinationViewController as! AdDetailController
             let row = (self.adTableView.indexPathForSelectedRow?.row)!
