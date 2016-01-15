@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class AdTableCell: UITableViewCell {
     
     @IBOutlet weak var adTitle: UILabel!
@@ -18,9 +19,13 @@ class AdTableCell: UITableViewCell {
 
 class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    func test(){
+        print("protocol test");
+    }
+    
     let TITLE_NAME = "광고 목록 보기"
     let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
-    
+        
     let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
     let TYPE_DIC : [String: Int] = [
         "음식": 1,
@@ -104,16 +109,15 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        //segue ID로 push이벤트시에 넘겨줄 값을 세팅한다
-//        if (segue.identifier == "AdDetailSegue") {
-//            let viewController = segue.destinationViewController as! AdDetailController
-//            let row = (self.adTableView.indexPathForSelectedRow?.row)!
-//            viewController.adModel = adTableList[row]
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "AdDetailSegue") {
+            let adDetailController = segue.destinationViewController as! AdDetailController
+            let row = (self.adTableView.indexPathForSelectedRow?.row)!
+            adDetailController.adModel = adTableList[row]
+        }
+    }
     
-    func btnsInit(btns : [UIButton]){
+    private func btnsInit(btns : [UIButton]){
         for btn in btns {
             btn.backgroundColor = UIColor.clearColor()
             btn.layer.cornerRadius = 8.0
@@ -134,7 +138,7 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.adTableView.reloadData()
     }
 
-    func getFilteredAdTableList(type : Int) -> [AdModel] {
+    private func getFilteredAdTableList(type : Int) -> [AdModel] {
         return adTableList.filter { (ad : AdModel) -> Bool in return ad.cdId == type }
     }
     

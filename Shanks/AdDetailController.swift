@@ -11,7 +11,7 @@ import Alamofire
 
 class AdDetailController: UIViewController {
     
-    var adModel : AdModel?
+    var adModel: AdModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

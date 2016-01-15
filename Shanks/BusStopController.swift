@@ -35,6 +35,10 @@ class BusStopController: UIViewController {
         searchBtn.setTitleColor(MY_COLOR, forState: UIControlState.Normal)
         
         showBusStopMarkerOnMap();
+        
+     //   let busStopService = BusStopService()
+     //   let busStopList = busStopService.getBusStopList()
+     //   genreateBusStopMarker()
     }
     
     func showBusStopMarkerOnMap(){
@@ -46,7 +50,7 @@ class BusStopController: UIViewController {
                          self.genreateBusStopList(dict)
                     }
                 }
-                self.genreateBusStopMarker();
+                self.genreateBusStopMarker()
             }
         }
     }
@@ -87,7 +91,6 @@ class BusStopController: UIViewController {
             anotation.title = busStop.name! + " (" + String(busStop.adsCnt!) + ")"
             anotation.subtitle = busStop.locModel!.addr!
         
-            
             map.addAnnotation(anotation)
             
             anntationDic[busStop.name!] = anotation
