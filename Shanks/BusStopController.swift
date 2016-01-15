@@ -12,27 +12,27 @@ import Alamofire
 
 class BusStopController: UIViewController {
     
+    let TITLE_NAME = "정류장 지도 보기"
+    let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
+    let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
    
     @IBOutlet weak var searchTf: UITextField!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
     
-    let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
     var busStopList = [BusStopModel]()
-    
+    var anntationDic = [String: MKPointAnnotation]()
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "정류장 지도 보기"
-        
-        let myColor : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+        self.navigationItem.title = TITLE_NAME
         
         searchTf.layer.cornerRadius = 8.0
         searchTf.layer.masksToBounds = true
         searchTf.layer.borderWidth = 2.0
-        searchTf.layer.borderColor = myColor.CGColor
+        searchTf.layer.borderColor = MY_COLOR.CGColor
         
-        searchBtn.setTitleColor(myColor, forState: UIControlState.Normal)
+        searchBtn.setTitleColor(MY_COLOR, forState: UIControlState.Normal)
         
         showBusStopMarkerOnMap();
     }
@@ -84,13 +84,27 @@ class BusStopController: UIViewController {
             
             let anotation = MKPointAnnotation()
             anotation.coordinate = location
-            anotation.title = busStop.name
-            anotation.subtitle = busStop.locModel!.addr! + " / " + String(busStop.adsCnt!)
+            anotation.title = busStop.name! + " (" + String(busStop.adsCnt!) + ")"
+            anotation.subtitle = busStop.locModel!.addr!
+        
+            
             map.addAnnotation(anotation)
+            
+            anntationDic[busStop.name!] = anotation
         }
+        
+        showSelectedAnnotation(anntationDic.keys.first!)
     }
     
     @IBAction func searchBtnPressed(sender: AnyObject) {
+        let searchText: String = searchTf.text!
+        showSelectedAnnotation(searchText)
+    }
+    
+    func showSelectedAnnotation(searchText: String){
+        if let selectedAnnotaion = anntationDic[searchText] {
+            map.selectAnnotation(selectedAnnotaion, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

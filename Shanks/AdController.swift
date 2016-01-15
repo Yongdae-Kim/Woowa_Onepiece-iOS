@@ -18,29 +18,37 @@ class AdTableCell: UITableViewCell {
 
 class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
+    let TITLE_NAME = "광고 목록 보기"
     let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
-    let myColor : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+    
+    let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+    let TYPE_DIC : [String: Int] = [
+        "음식": 1,
+        "문화": 2,
+        "매장": 3,
+        "기타": 4
+    ]
     
     @IBOutlet weak var etcBtn: UIButton!
     @IBOutlet weak var storeBtn: UIButton!
     @IBOutlet weak var cultureBtn: UIButton!
     @IBOutlet weak var foodBtn: UIButton!
+    @IBOutlet weak var totalBtn: UIButton!
     
     @IBOutlet weak var adTableView: UITableView!
     
+   
     var adList = [AdModel]()
+    var adTableList = [AdModel]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "광고 목록 보기"
+        self.navigationItem.title = TITLE_NAME
         showAdTableView()
         
-        btnInit(foodBtn)
-        btnInit(cultureBtn)
-        btnInit(storeBtn)
-        btnInit(etcBtn)
+        btnsInit([totalBtn, foodBtn, cultureBtn, storeBtn, etcBtn])
     }
-    
     
     func showAdTableView(){
         Alamofire.request(.GET, URL_FOR_GET_AD).responseJSON { response in
@@ -52,6 +60,7 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
                         self.genreateAdList(dict)
                     }
                 }
+                self.adList = self.adTableList
                 self.adTableView.reloadData()
             }
         }
@@ -61,6 +70,7 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         let adModel = AdModel()
         
         adModel.id = dict["id"] as? Int
+        adModel.cdId = dict["cd_id"] as? Int
         adModel.title = dict["title"] as? String
         adModel.comment1 = dict["content1"] as? String
         adModel.comment2 = dict["content2"] as? String
@@ -74,19 +84,19 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
             locModel.lng = loc["lng"] as? String
             adModel.locModel = locModel
         }
-        self.adList.append(adModel)
+        self.adTableList.append(adModel)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return adList.count
+        return adTableList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AdCell", forIndexPath: indexPath) as! AdTableCell
         
         let row = indexPath.row
-        cell.adTitle.text = adList[row].title
-        cell.adComment.text = adList[row].comment1
+        cell.adTitle.text = adTableList[row].title
+        cell.adComment.text = adTableList[row].comment1
         
         let img = UIImage(named: "sample.jpg")
         cell.adImg.image = img
@@ -94,18 +104,38 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //        let row = indexPath.row
-    //        let order = adList[row].title
-    //    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        //segue ID로 push이벤트시에 넘겨줄 값을 세팅한다
+//        if (segue.identifier == "AdDetailSegue") {
+//            let viewController = segue.destinationViewController as! AdDetailController
+//            let row = (self.adTableView.indexPathForSelectedRow?.row)!
+//            viewController.adModel = adTableList[row]
+//        }
+//    }
     
-    func btnInit(btn : UIButton){
-        btn.backgroundColor = UIColor.clearColor()
-        btn.layer.cornerRadius = 8.0
-        btn.layer.masksToBounds = true
-        btn.layer.borderWidth = 2.0
-        btn.layer.borderColor = myColor.CGColor
-        btn.setTitleColor(myColor, forState: UIControlState.Normal)
+    func btnsInit(btns : [UIButton]){
+        for btn in btns {
+            btn.backgroundColor = UIColor.clearColor()
+            btn.layer.cornerRadius = 8.0
+            btn.layer.masksToBounds = true
+            btn.layer.borderWidth = 2.0
+            btn.layer.borderColor = MY_COLOR.CGColor
+            btn.setTitleColor(MY_COLOR, forState: UIControlState.Normal)
+            btn.addTarget(self, action: Selector("btnPressed:"), forControlEvents: UIControlEvents.TouchDown);
+        }
+    }
+    
+    func btnPressed(sender : UIButton!) {
+        adTableList = adList
+        if(sender != totalBtn){
+            let key = sender.titleLabel!.text
+            adTableList = getFilteredAdTableList(TYPE_DIC[key!]!)
+        }
+        self.adTableView.reloadData()
+    }
+
+    func getFilteredAdTableList(type : Int) -> [AdModel] {
+        return adTableList.filter { (ad : AdModel) -> Bool in return ad.cdId == type }
     }
     
     override func didReceiveMemoryWarning() {

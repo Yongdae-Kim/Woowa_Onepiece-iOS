@@ -52,7 +52,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1R-Xw-w9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="493"/>
+            <point key="canvasLocation" x="896" y="565"/>
+        </scene>
+        <!--Ad Detail Controller-->
+        <scene sceneID="AP6-J6-XIf">
+            <objects>
+                <viewController storyboardIdentifier="AdDetailSegue" id="6f7-1D-Xgx" customClass="AdDetailController" customModule="Shanks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qC0-K2-485"/>
+                        <viewControllerLayoutGuide type="bottom" id="35G-aT-g6n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MXu-QP-hfb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaf-hp-3NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421" y="-251"/>
         </scene>
         <!--Ad Controller-->
         <scene sceneID="y8q-Ug-dy8">
@@ -98,6 +117,7 @@
                                             <outlet property="adComment" destination="6dK-xm-OuU" id="mbS-2V-E8R"/>
                                             <outlet property="adImg" destination="69p-Hm-isA" id="X6v-yq-nU5"/>
                                             <outlet property="adTitle" destination="aZZ-Kz-GGe" id="B1p-w9-jbQ"/>
+                                            <segue destination="6f7-1D-Xgx" kind="show" trigger="accessoryAction" id="Opb-V8-yPm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,25 +129,30 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rL9-8r-z2e">
                                 <rect key="frame" x="0.0" y="64" width="414" height="62"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-cU-UoG">
-                                        <rect key="frame" x="16" y="8" width="80" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="음식"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxY-uz-Ikb">
-                                        <rect key="frame" x="119" y="8" width="80" height="40"/>
+                                        <rect key="frame" x="175" y="16" width="65" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="문화"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-hA-0KQ">
-                                        <rect key="frame" x="227" y="8" width="80" height="40"/>
+                                        <rect key="frame" x="259" y="16" width="65" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="매장"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbF-jl-lXt">
-                                        <rect key="frame" x="325" y="8" width="80" height="40"/>
+                                        <rect key="frame" x="341" y="16" width="65" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="기타"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6F6-Bh-LT5">
+                                        <rect key="frame" x="8" y="16" width="65" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="전체"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttX-cU-UoG">
+                                        <rect key="frame" x="88" y="16" width="65" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="음식"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,11 +168,12 @@
                         <outlet property="etcBtn" destination="gbF-jl-lXt" id="asX-ty-KjD"/>
                         <outlet property="foodBtn" destination="ttX-cU-UoG" id="hEy-7j-zqX"/>
                         <outlet property="storeBtn" destination="i3d-hA-0KQ" id="FIb-OE-dWU"/>
+                        <outlet property="totalBtn" destination="6F6-Bh-LT5" id="eRK-FF-dQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBs-C4-cif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-252"/>
+            <point key="canvasLocation" x="931" y="-251"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="0SG-zU-MPp">
@@ -207,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KsY-zo-FOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="331.5" y="493.5"/>
+            <point key="canvasLocation" x="332" y="565"/>
         </scene>
     </scenes>
     <resources>
