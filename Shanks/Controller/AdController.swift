@@ -1,23 +1,12 @@
-//
-//  FirstView.swift
-//  Shanks
-//
-//  Created by user on 2016. 1. 12..
-//  Copyright © 2016년 Onepiece. All rights reserved.
-//
+/**
+    AdController.swift
+    Author  Shanks
+    Date    2016. 1. 12..
+    Copyright © 2016년 Onepiece. All rights reserved.
+*/
 
 import UIKit
 import Alamofire
-
-
-class AdTableCell: UITableViewCell {
-    
-    @IBOutlet weak var adTitleL: UILabel!
-    
-    @IBOutlet weak var adImgIv: UIImageView!
-    
-    @IBOutlet weak var adCommentL: UILabel!
-}
 
 class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -31,7 +20,7 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         "매장": 3,
         "기타": 4
     ]
-    
+
     @IBOutlet weak var etcBtn: UIButton!
     @IBOutlet weak var storeBtn: UIButton!
     @IBOutlet weak var cultureBtn: UIButton!
@@ -53,17 +42,21 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         })
     }
     
-    func initAdList(adModelList: [AdModel] ){
-        self.adTableList = adModelList
-        self.adList = adModelList
-        self.adTableView.reloadData()
-    }
-    
+    /**
+        네비게이션 바, 텍스트 필드, 버튼을 초기화합니다.
+        @param
+        @return
+    */
     private func viewInit(){
         self.navigationItem.title = TITLE_NAME
         btnsInit([totalBtn, foodBtn, cultureBtn, storeBtn, etcBtn])
     }
     
+    /**
+        버튼들을 초기화합니다.
+        @param  버튼 목록
+        @return
+    */
     private func btnsInit(btns : [UIButton]){
         for btn in btns {
             btn.backgroundColor = UIColor.clearColor()
@@ -83,6 +76,17 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
             let type = TYPE_DIC[key!]
             adTableList = AdService.sharedInstance.getFilteredAdModelList(type!, adModelList: adTableList)
         }
+        self.adTableView.reloadData()
+    }
+    
+    /**
+        광고목록을 초기화하고, 테이블 뷰를 새로고침합니다.
+        @param  광고 목록
+        @return
+    */
+    private func initAdList(adModelList: [AdModel] ){
+        self.adTableList = adModelList
+        self.adList = adModelList
         self.adTableView.reloadData()
     }
     
@@ -120,4 +124,11 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
+
+class AdTableCell: UITableViewCell {
+    
+    @IBOutlet weak var adTitleL: UILabel!
+    @IBOutlet weak var adImgIv: UIImageView!
+    @IBOutlet weak var adCommentL: UILabel!
 }

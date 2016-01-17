@@ -68,6 +68,9 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbx-ri-wMm">
                                 <rect key="frame" x="20" y="169" width="374" height="292"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6f7-1D-Xgx" id="xYG-U6-Dlj"/>
+                                </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bfj-TT-Y19">
                                 <rect key="frame" x="188" y="469" width="39" height="37"/>
