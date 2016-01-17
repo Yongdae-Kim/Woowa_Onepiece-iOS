@@ -13,7 +13,6 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
     let TITLE_NAME = "광고 목록 보기"
     let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
         
-    let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
     let TYPE_DIC : [String: Int] = [
         "음식": 1,
         "문화": 2,
@@ -43,28 +42,24 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     /**
-        네비게이션 바, 텍스트 필드, 버튼을 초기화합니다.
+        네비게이션 바, 버튼을 초기화합니다.
         @param
         @return
     */
     private func viewInit(){
         self.navigationItem.title = TITLE_NAME
-        btnsInit([totalBtn, foodBtn, cultureBtn, storeBtn, etcBtn])
+        typeBtnsInit([totalBtn, foodBtn, cultureBtn, storeBtn, etcBtn])
     }
     
     /**
-        버튼들을 초기화합니다.
+        타입 버튼들을 초기화합니다.
         @param  버튼 목록
         @return
     */
-    private func btnsInit(btns : [UIButton]){
+    private func typeBtnsInit(btns : [UIButton]){
         for btn in btns {
-            btn.backgroundColor = UIColor.clearColor()
-            btn.layer.cornerRadius = 8.0
-            btn.layer.masksToBounds = true
-            btn.layer.borderWidth = 2.0
-            btn.layer.borderColor = MY_COLOR.CGColor
-            btn.setTitleColor(MY_COLOR, forState: UIControlState.Normal)
+            Theme.sharedInstance.initBtnBoarderColor(btn)
+            Theme.sharedInstance.initBtnTextColor(btn)
             btn.addTarget(self, action: Selector("btnPressed:"), forControlEvents: UIControlEvents.TouchDown);
         }
     }

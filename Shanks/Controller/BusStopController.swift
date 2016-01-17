@@ -12,8 +12,7 @@ import Alamofire
 class BusStopController: UIViewController {
     
     let TITLE_NAME = "정류장 지도 보기"
-    let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
-   
+    
     @IBOutlet weak var searchTf: UITextField!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var map: MKMapView!
@@ -38,15 +37,13 @@ class BusStopController: UIViewController {
     private func viewInit(){
         self.navigationItem.title = TITLE_NAME
 
-        searchTf.layer.cornerRadius = 8.0
-        searchTf.layer.masksToBounds = true
-        searchTf.layer.borderWidth = 2.0
-        searchTf.layer.borderColor = MY_COLOR.CGColor
+        Theme.sharedInstance.initTfBorderColor(searchTf)
+        Theme.sharedInstance.initBtnTextColor(searchBtn)
         
-        searchBtn.setTitleColor(MY_COLOR, forState: UIControlState.Normal)
+        searchBtn.addTarget(self, action: Selector("btnPressed:"), forControlEvents: UIControlEvents.TouchDown);
     }
     
-    @IBAction func searchBtnPressed(sender: AnyObject) {
+    func btnPressed(sender : UIButton!) {
         let searchText: String = searchTf.text!
         showSelectedAnnotation(searchText)
     }

@@ -12,9 +12,9 @@ class BusStopService {
     let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
     
     /**
-        싱글톤 패턴으로 광고서비스 인스턴스를 만들어줍니다.
+        싱글톤 패턴으로 버스정류장 서비스 인스턴스를 만들어줍니다.
         @param
-        @return 광고 서비스 인스턴스
+        @return 버스정류장 서비스 인스턴스
     */
     class var sharedInstance: BusStopService {
         struct Static {

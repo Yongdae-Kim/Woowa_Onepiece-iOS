@@ -12,7 +12,7 @@ class AdService {
     let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
     
     /**
-        싱글톤 패턴으로 광고서비스 인스턴스를 만들어줍니다.
+        싱글톤 패턴으로 광고 서비스 인스턴스를 만들어줍니다.
         @param
         @return 광고 서비스 인스턴스
     */
@@ -57,6 +57,7 @@ class AdService {
     */
     private func genreateAdModel(dict : NSDictionary) -> AdModel{
         let adModel = AdModel()
+        var imgModelList = [ImgModel]()
         
         adModel.id = dict["id"] as? Int
         adModel.cdId = dict["cd_id"] as? Int
@@ -73,6 +74,19 @@ class AdService {
             locModel.lng = loc["lng"] as? String
             adModel.locModel = locModel
         }
+
+        if let imgs = dict["imgs"] as? NSArray {
+            for img in imgs {
+                if let dict = img as? NSDictionary {
+                    let imgModel = ImgModel()
+                    imgModel.uri = dict["uri"] as? String
+                    imgModelList.append(imgModel)
+                }
+            }
+        }
+        
+        adModel.imgModelList = imgModelList
+        
         return adModel
     }
     

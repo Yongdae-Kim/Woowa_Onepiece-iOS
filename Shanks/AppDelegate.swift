@@ -13,19 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let MY_COLOR : UIColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-     
         
-        UINavigationBar.appearance().barTintColor = MY_COLOR
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        Theme.sharedInstance.initNaviBarColor()
+        Theme.sharedInstance.initTabBarColor()
         
-        UITabBar.appearance().barTintColor = MY_COLOR
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
- 
         return true
     }
 

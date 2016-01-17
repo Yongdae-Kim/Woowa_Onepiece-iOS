@@ -8,12 +8,13 @@
 import UIKit
 
 class AdModel: NSObject {
-    var id:Int?
-    var title:String?
-    var locModel:LocModel?
-    var cdId:Int?
-    var comment1:String?
-    var comment2:String?
-    var startDt:String?
-    var endDt:String?
+    var id: Int?
+    var title: String?
+    var cdId: Int?
+    var comment1: String?
+    var comment2: String?
+    var startDt: String?
+    var endDt: String?
+    var locModel: LocModel?
+    var imgModelList: [ImgModel]?
 }
