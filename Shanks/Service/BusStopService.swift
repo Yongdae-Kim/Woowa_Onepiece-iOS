@@ -9,7 +9,7 @@ import Alamofire
 
 class BusStopService {
     
-    let URL_FOR_GET_BUS_STOP =  "http://luffy.dev/api/bus_stops.json"
+    let API_URI_FOR_GET_BUS_STOPS =  "http://luffy.dev/api/bus_stops.json"
     
     /**
         싱글톤 패턴으로 버스정류장 서비스 인스턴스를 만들어줍니다.
@@ -33,7 +33,7 @@ class BusStopService {
         @return 버스정류장 목록
     */
     func getBusStopList(completionHandler:[BusStopModel] -> ())  {
-        Alamofire.request(.GET, URL_FOR_GET_BUS_STOP).responseJSON {
+        Alamofire.request(.GET, API_URI_FOR_GET_BUS_STOPS).responseJSON {
             response in
             let JSON = response.result.value
             var busStopList = [BusStopModel]()

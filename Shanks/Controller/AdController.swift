@@ -11,8 +11,8 @@ import Alamofire
 class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     let TITLE_NAME = "광고 목록 보기"
-    let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
-        
+    let WOOWAHAN_LOG_URI = "http://www.woowahan.com/wp-content/uploads/2012/01/main_logo.gif"
+    
     let TYPE_DIC : [String: Int] = [
         "음식": 1,
         "문화": 2,
@@ -96,9 +96,15 @@ class AdController: UIViewController, UITableViewDelegate, UITableViewDataSource
         cell.adTitleL.text = adTableList[row].title
         cell.adCommentL.text = adTableList[row].comment1
         
-        let img = UIImage(named: "/resources/sample.jpg")
-        cell.adImgIv.image = img
-        cell.adImgIv.contentMode = UIViewContentMode.ScaleAspectFit
+        let imgModelList = adTableList[row].imgModelList
+        
+        let imgPath = imgModelList!.isEmpty ? WOOWAHAN_LOG_URI : imgModelList![0].uri!
+        
+        Alamofire.request(.GET, imgPath).response() {
+            (_, _, data, _) in
+            cell.adImgIv.image = UIImage(data: data!)!
+            cell.adImgIv.contentMode = UIViewContentMode.ScaleAspectFit
+        }
         
         return cell
     }

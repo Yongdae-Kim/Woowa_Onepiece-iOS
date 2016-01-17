@@ -6,6 +6,7 @@
 */
 
 import UIKit
+import Alamofire
 
 class AdDetailController: UIViewController {
     
@@ -34,6 +35,13 @@ class AdDetailController: UIViewController {
         
         Theme.sharedInstance.initBtnBoarderColor(adLocBtn)
         Theme.sharedInstance.initBtnTextColor(adLocBtn)
+        adLocBtn.addTarget(self, action: Selector("btnPressed:"), forControlEvents: UIControlEvents.TouchDown);
+    }
+    
+    func btnPressed(sender : UIButton!) {
+        let locModel = adModel?.locModel
+        print(locModel!.lat)
+        print(locModel!.lng)
     }
     
     func adImgContentViewInit(imgModelList: [ImgModel]){
@@ -42,22 +50,14 @@ class AdDetailController: UIViewController {
         let viewWidth = self.adImgCtView.frame.size.width
         let viewHeight = self.adImgCtView.frame.size.height
         let imgsCnt = imgModelList.count
-        
+                
         for(var i=0; i<imgsCnt; i++){
             let startx = CGFloat(i) * viewWidth
             let colorView = UIView(frame:CGRectMake(startx, 0, viewWidth, viewHeight))
-            switch(i){
-            case 0 :
-                colorView.backgroundColor = UIColor.blackColor()
-                break
-            case 1 :
-                colorView.backgroundColor = UIColor.grayColor()
-                break
-            case 2 :
-                colorView.backgroundColor = UIColor.purpleColor()
-                break
-            default :
-                break
+            
+            Alamofire.request(.GET, imgModelList[i].uri!).response() {
+                (_, _, data, _) in
+                colorView.backgroundColor = UIColor(patternImage: UIImage(data: data!)!)
             }
             adImgSv.addSubview(colorView)
         }

@@ -9,7 +9,7 @@ import Alamofire
 
 class AdService {
     
-    let URL_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
+    let API_URI_FOR_GET_AD =  "http://luffy.dev/api/ads.json"
     
     /**
         싱글톤 패턴으로 광고 서비스 인스턴스를 만들어줍니다.
@@ -33,7 +33,7 @@ class AdService {
         @return 광고 목록
     */
     func getAdList(completionHandler:[AdModel] -> ())  {
-        Alamofire.request(.GET, URL_FOR_GET_AD).responseJSON {
+        Alamofire.request(.GET, API_URI_FOR_GET_AD).responseJSON {
             response in
             let JSON = response.result.value
             var adModelList = [AdModel]()
